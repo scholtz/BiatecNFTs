@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   deploy:
-    name: 'Deploy main branch'
+    name: "Deploy main branch"
     runs-on: ubuntu-latest
     steps:
       - name: Configure SSH
@@ -26,4 +26,4 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
 
       - name: Deploy
-        run: ssh staging 'cd ~/BiatecWeb && ./deploy.sh'
+        run: ssh staging 'cd ~/BiatecNFTs && ./deploy.sh'
