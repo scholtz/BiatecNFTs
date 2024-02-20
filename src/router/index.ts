@@ -16,6 +16,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: PublicHomeView
+    },
+    {
+      path: '/nft/:nftId',
+      name: 'homeWithId',
+      component: PublicHomeView
     }
   ]
 })

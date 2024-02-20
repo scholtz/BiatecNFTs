@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useAppStore } from '@/stores/app'
 import Menubar from 'primevue/menubar'
 import Badge from 'primevue/badge'
-import Logo from '@/assets/projects/biatec.svg?raw'
+import Logo from '@/assets/projects/nfts.svg?raw'
 const store = useAppStore()
 
 const makeMenu = () => {
@@ -13,119 +13,13 @@ const makeMenu = () => {
       icon: 'pi pi-home',
       route: '/'
     },
+
     {
-      label: 'Our Projects',
-      icon: 'pi pi-star',
-      items: [
-        {
-          label: 'Wallet',
-          icon: 'pi pi-star',
-          items: [
-            {
-              label: 'A-Wallet web',
-              icon: 'pi pi-star',
-              url: 'https://www.a-wallet.net'
-            },
-            {
-              label: 'Source code',
-              icon: 'pi pi-star',
-              url: 'https://github.com/scholtz/wallet'
-            }
-          ]
-        },
-        {
-          label: 'Gold token',
-          icon: 'pi pi-star',
-          items: [
-            {
-              label: 'ASA.Gold Web',
-              icon: 'pi pi-star',
-              url: 'https://www.asa.gold'
-            },
-            {
-              label: 'ASA.Gold Api',
-              icon: 'pi pi-star',
-              url: 'https://bff.asa.gold/swagger/index.html'
-            },
-            {
-              label: 'Source code',
-              icon: 'pi pi-star',
-              url: 'https://github.com/scholtz/wallet'
-            }
-          ]
-        },
-        {
-          label: 'Concentrated liquidity AMM',
-          icon: 'pi pi-star',
-          items: [
-            {
-              label: 'Biatec DEX',
-              icon: 'pi pi-star',
-              url: 'https://dex.biatec.io'
-            }
-          ]
-        },
-        {
-          label: 'Aramid Bridge',
-          icon: 'pi pi-star',
-          items: [
-            {
-              label: 'Aramid Bridge Web',
-              icon: 'pi pi-star',
-              url: 'https://www.aramid.finance'
-            },
-            {
-              label: 'Aramid Bridge - Voi2Algo',
-              icon: 'pi pi-star',
-              url: 'https://voitest.k8s.aramid.finance'
-            }
-          ]
-        },
-        {
-          label: 'Accounting',
-          icon: 'pi pi-star',
-          items: [
-            {
-              label: 'Biatec Accounting Web',
-              icon: 'pi pi-star',
-              url: 'https://accounting.biatec.io'
-            }
-          ]
-        },
-        {
-          label: 'NFTs',
-          icon: 'pi pi-star',
-          items: [
-            {
-              label: 'Biatec NFTs Web',
-              icon: 'pi pi-star',
-              url: 'https://nft.biatec.io'
-            }
-          ]
-        },
-        {
-          label: 'Voting',
-          icon: 'pi pi-star',
-          items: [
-            {
-              label: 'Vote Coin Standard',
-              icon: 'pi pi-star',
-              url: 'https://www.vote-coin.com'
-            },
-            {
-              label: 'Vote Coin app',
-              icon: 'pi pi-star',
-              url: 'https://app.vote-coin.com'
-            },
-            {
-              label: 'Vote Coin API',
-              icon: 'pi pi-star',
-              url: 'https://api.vote-coin.com/swagger/index.html'
-            }
-          ]
-        }
-      ]
+      label: 'Biatec Group',
+      icon: 'pi pi-home',
+      url: 'https://www.biatec.io'
     },
+
     {
       label: 'Theme',
       icon: 'pi pi-palette',

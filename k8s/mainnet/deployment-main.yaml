@@ -6,23 +6,23 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: biatec-web-main-deployment
+  name: biatec-nfts-main-deployment
   namespace: biatec
 spec:
   selector:
     matchLabels:
-      app: biatec-web-main
+      app: biatec-nfts-main
   replicas: 1
   template:
     metadata:
       labels:
-        app: biatec-web-main
+        app: biatec-nfts-main
     spec:
       imagePullSecrets:
         - name: regcred
       containers:
-        - name: biatec-web-main
-          image: scholtz2/biatec-web:1.2024.02.20-main
+        - name: biatec-nfts-main
+          image: scholtz2/biatec-nfts:1.2024.02.20-main
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -41,24 +41,24 @@ spec:
             failureThreshold: 2
             terminationGracePeriodSeconds: 1
           volumeMounts:
-            - name: biatec-main-conf
+            - name: biatec-nfts-main-conf
               mountPath: /app/config.json
               subPath: config.json
       volumes:
-        - name: biatec-main-conf
+        - name: biatec-nfts-main-conf
           configMap:
-            name: biatec-main-conf
+            name: biatec-nfts-main-conf
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: biatec-mainnet-service
+  name: biatec-nfts-mainnet-service
   namespace: biatec
 spec:
   type: ClusterIP
   selector:
-    app: biatec-web-main
+    app: biatec-nfts-main
   ports:
     - name: http
       protocol: TCP
@@ -70,7 +70,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: biatec-web-main
+  name: biatec-nfts-main
   namespace: biatec
   annotations:
     kubernetes.io/ingress.class: 'nginx'
@@ -80,27 +80,27 @@ metadata:
 spec:
   tls:
     - hosts:
-        - biatec.io
-        - www.biatec.io
-      secretName: tls-biatec.io
+        - nft.biatec.io
+        - www.nft.biatec.io
+      secretName: tls-nft.biatec.io
   rules:
-    - host: biatec.io
+    - host: nft.biatec.io
       http:
         paths:
           - path: /(.*)
             pathType: Prefix
             backend:
               service:
-                name: biatec-mainnet-service
+                name: biatec-nfts-mainnet-service
                 port:
                   number: 8080
-    - host: www.biatec.io
+    - host: www.nft.biatec.io
       http:
         paths:
           - path: /(.*)
             pathType: Prefix
             backend:
               service:
-                name: biatec-mainnet-service
+                name: biatec-nfts-mainnet-service
                 port:
                   number: 8080
