@@ -169,6 +169,18 @@ const route = useRoute()
                 <Button link>Collection is available at highforge.io</Button>
               </a>
             </p>
+            <p>
+              <a target="_blank" :href="`https://nautilus.sh/#/collection/28387090/token/${parseInt(route.params.nftId as string) - 1}`">
+                <Button link>Go to market place</Button>
+              </a>
+            </p>
+            <p>
+              <a target="_blank" :href="`https://nftnavigator.xyz/collection/28387090/token/${parseInt(route.params.nftId as string) - 1}`">
+                <Button link>Check the history</Button>
+              </a>
+            </p>
+
+            
             <Image
               :src="state.nfts[parseInt(route.params.nftId as string) - 1]"
               :alt="`NFT ${parseInt(route.params.nftId as string) - 1}`"
