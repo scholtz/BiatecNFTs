@@ -22,7 +22,7 @@ spec:
         - name: regcred
       containers:
         - name: biatec-nfts-main
-          image: scholtz2/biatec-nfts:1.2024.02.20-main
+          image: scholtz2/biatec-nfts:1.2024.03.09-main
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
