@@ -27,7 +27,13 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <Card class="m-2 text-center">
-    <template #content> &copy; 2021-2024 Scholtz & Company, jsa </template>
+    <template #content>
+      <div>&copy; 2021-2024 Scholtz & Company, jsa</div>
+      <div>
+        Part of the BIATEC group -
+        <a href="https://www.biatec.io" target="_blank">www.biatec.io</a>
+      </div>
+    </template>
   </Card>
 </template>
 <style scoped>
